@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_canonTip: {fileID: 1779280545818044}
-  m_wichBulletToSpawn: 1
+  m_wichBulletToSpawn: 2
   m_timeBetweenBullet: 3
 --- !u!114 &114886266347654044
 MonoBehaviour:

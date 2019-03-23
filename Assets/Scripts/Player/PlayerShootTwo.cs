@@ -6,12 +6,18 @@ public class PlayerShootTwo : MonoBehaviour
 {
 	#region Public 
 
+	[Header("Int")]
 	public int m_numberOfSummon;
+	public int m_fireCost;
+	public int m_maxShoot;
+	public int m_numberOfShoot;
 
+	[Header("Float")]
 	public float m_spriteRatioX;
 	public float m_spriteRatioY;
 	public float m_mdr;
 
+	[Header("GOB")]
     //GameObject
 	public GameObject m_canonTip;
 	public GameObject m_bullet;
@@ -31,11 +37,20 @@ public class PlayerShootTwo : MonoBehaviour
 		m_canonPos = m_canonTip.transform.position.y;
 		m_mdr = Vector2.Distance( m_spawnLimitLeft.transform.position , m_spawnLimitRight.transform.position);
 		m_fireCost = 4000;
+		m_maxShoot = GameObject.Find("SliderList").GetComponent<SliderPointList>().m_sliderList.Count;
+		// m_numberOfShoot = 0;
     }
 	private void Update()
 	{
+
 		m_numberOfPoint = gameObject.GetComponent<PlayerScore>().m_point;
-		if (Input.GetMouseButtonDown(0) && m_numberOfPoint > m_fireCost)
+		//--------------PC---------------//
+		// if (Input.GetMouseButtonDown(0) && m_numberOfShoot > 0)
+		// {
+		// 	SummonBullet();
+		// }
+		//--------------TOUCH-----------//
+		if (Input.touchCount > 1 && m_numberOfShoot > 0)
 		{
 			SummonBullet();
 		}
@@ -48,10 +63,11 @@ public class PlayerShootTwo : MonoBehaviour
 
 	public void SummonBullet()
 	{
-		if(m_numberOfPoint > m_fireCost)
+
+		if(m_numberOfShoot>0)
 		{
 			m_bulletXpos = m_spawnLimitLeft.transform.position.x;
-			gameObject.GetComponent<PlayerScore>().ScoreDown(m_fireCost);
+			gameObject.GetComponent<PlayerScore>().ScoreDown();
 			for ( int i = 0 ; i <= m_numberOfSummon ; i++)
 			{
 				Vector2 bulletPos = new Vector2(m_bulletXpos, m_canonPos);
@@ -80,7 +96,7 @@ public class PlayerShootTwo : MonoBehaviour
 	private Vector2 m_spriteSize;
 
 	private int m_numberOfPoint;
-	private int m_fireCost;
+	
     
     #endregion
 }

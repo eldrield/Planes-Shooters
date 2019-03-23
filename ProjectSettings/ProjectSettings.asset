@@ -12,7 +12,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Eldrield
-  productName: SpaceShoot
+  productName: PlanesShooters
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -260,7 +260,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 9993af9a8816a4120ad2ee6dd1be7d89, type: 3}
+      m_Icon: {fileID: 2800000, guid: 34119e4d23fb14922a6c539c251f0109, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -644,7 +644,7 @@ PlayerSettings:
   apiCompatibilityLevel: 2
   cloudProjectId: 358d648a-f36c-40a0-92c8-459e8c3e7b60
   projectName: SpaceShoot
-  organizationId: louis-brunon
+  organizationId: eldrield-stuff
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

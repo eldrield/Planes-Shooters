@@ -14,16 +14,26 @@ public class Spawner : MonoBehaviour
 	#region Public Members
 
 	public List<Ennemy> m_ennemyList;
+
+	[Header("Float")]
+	public float m_increaseSpanwnTime;
 	public float m_TimeBetweenSpawn;
+
+	[Header("GOB")]
 	public GameObject m_prefabEnnemy;
 	public GameObject m_spawnLimitLeft;
 	public GameObject m_spawnLimitRight;
-	public float m_increaseSpanwnTime;
 
 	#endregion
 
+
 	#region Main
     
+
+	private void Awake()
+	{
+		m_startTime = Time.time;
+	}
 	public IEnumerator EnnemySpawner()
 	{
 		while ( true )
@@ -36,7 +46,7 @@ public class Spawner : MonoBehaviour
         	}
 			else
 		 	{
-				 if( Time.time < 120)
+				 if( Time.time - m_startTime < 90)
 				 {
 					 int _wichToSpawn = UnityEngine.Random.Range(0,2);
 					Vector2 ennemyPos = new Vector2( UnityEngine.Random.Range( m_limitLeft , m_limitRight ) , m_limitUp );
@@ -81,6 +91,7 @@ public class Spawner : MonoBehaviour
 
 	#region private
 
+	private float m_startTime;
 	private float m_limitLeft;
 	private float m_limitRight;
 	private float m_limitUp;

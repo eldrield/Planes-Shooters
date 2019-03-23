@@ -19,6 +19,7 @@ public class PlayerMove: MonoBehaviour
 		m_playerAnimator = GetComponent<Animator>();
         m_lastTouch = m_transform.position;
         Cursor.visible = false;
+        m_transform.position = new Vector3(0f,-4.43f,0f);
         // m_width = (float)Screen.width / 2.0f;
         // m_width = Screen.width; 
     }

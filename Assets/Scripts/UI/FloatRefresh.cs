@@ -20,15 +20,15 @@ public class FloatRefresh : PlayerScore
 	{
 		m_textLifePointToResfresh = m_lifeGameObject.GetComponent<TextMeshProUGUI>();
 		m_textScoreToRefresh = m_scoreGameObject.GetComponent<TextMeshProUGUI>();
-		m_textPointToRefresh = m_pointGameObject.GetComponent<TextMeshProUGUI>();
+		// m_textPointToRefresh = m_pointGameObject.GetComponent<TextMeshProUGUI>();
 	}
 
 	private void Update()
     {
 		m_floatScoreValue = gameObject.GetComponent<PlayerScore>().m_score;
         m_textScoreToRefresh.SetText( "Score : {0}" , m_floatScoreValue );
-		m_floatPointValue = gameObject.GetComponent<PlayerScore>().m_point;
-		m_textPointToRefresh.SetText( "Point : {0}" , m_floatPointValue );
+		// m_floatPointValue = gameObject.GetComponent<PlayerScore>().m_point;
+		// m_textPointToRefresh.SetText( "Point : {0}" , m_floatPointValue );
 		m_currentLifeValue = gameObject.GetComponent<Health>().m_currentHealth;
 		m_textLifePointToResfresh.SetText( "Life : {0}" , m_currentLifeValue );
     }
